@@ -4,6 +4,8 @@ require "sinatra/json"
 require "sinatra/reloader" if development?
 require "haml"
 
+set :protection, :except => [:json_csrf]
+
 configure do
   enable :inline_templates
 end
