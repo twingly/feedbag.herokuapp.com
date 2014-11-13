@@ -1,6 +1,6 @@
 # Feedbag app
 
-Returns a JSON array with feed URLs.
+Returns a list of feed URLs.
 
 ## Deploy
 
