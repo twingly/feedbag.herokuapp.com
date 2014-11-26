@@ -9,8 +9,9 @@ configure do
 end
 
 get "/" do
-  unless params[:url].to_s.empty?
-    @feeds = Feedbag.find(params[:url])
+  @url = params[:url].to_s
+  unless @url.empty?
+    @feeds = Feedbag.find(@url)
   else
     @feeds = []
   end
@@ -31,16 +32,22 @@ __END__
 - port = [80, 443].include?(request.port) ? "" : ":#{request.port}"
 - url = "#{request.scheme}://#{request.host}#{port}/?url=blog.trello.com"
 %p
-  Returns a list of feed URLs.
-  %a{ href: url }= url
-
-%ul
-  - @feeds.each do |feed|
-    - url = "https://feedjira.herokuapp.com/?url=#{feed}"
-    %li
-      %a{ href: url }= url
-
-%p
-  Using
+  Returns a list of feed URLs using
   = succeed "." do
     %a{ href: "https://github.com/damog/feedbag" } Feedbag
+
+%p
+  Example:
+  %a{ href: url }= url
+
+- unless @url.empty?
+  %h2 Feeds
+
+  %ul
+    - @feeds.each do |feed|
+      - url = "https://feedjira.herokuapp.com/?url=#{feed}"
+      %li
+        %a{ href: url }= url
+
+  - if @feeds.empty?
+    %p No feeds found.
