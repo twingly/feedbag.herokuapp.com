@@ -39,8 +39,6 @@ __END__
     - url = "https://feedjira.herokuapp.com/?url=#{feed}"
     %li
       %a{ href: url }= url
-  - if @feeds.empty?
-    %p No feeds.
 
 %p
   Using
