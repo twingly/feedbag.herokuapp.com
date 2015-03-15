@@ -42,7 +42,14 @@ __END__
 
 - unless @url.empty?
   %h2= "Feeds for #{@url}"
+  
+  %ul
+    - @feeds.each do |feed|
+      %li
+        %a{ href: feed }= feed
 
+  %p Explore the feeds with Feedjira:
+  
   %ul
     - @feeds.each do |feed|
       - url = "https://feedjira.herokuapp.com/?url=#{feed}"
