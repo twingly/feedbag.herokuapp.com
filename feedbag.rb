@@ -41,7 +41,7 @@ __END__
   %a{ href: url }= url
 
 - unless @url.empty?
-  %h2 Feeds
+  %h2= "Feeds for #{@url}"
 
   %ul
     - @feeds.each do |feed|
