@@ -50,14 +50,18 @@ __END__
 
   %p Explore the feeds with Feedjira:
 
+  %h3 Pretty XML with syntax highlighting
+  %ul
+    - @feeds.each do |feed|
+      - xmlurl = "https://feedjira.herokuapp.com/xml?url=#{feed}"
+      %li
+        %a{ href: xmlurl }= xmlurl
+  %h3 JSON
   %ul
     - @feeds.each do |feed|
       - url = "https://feedjira.herokuapp.com/?url=#{feed}"
-      - xmlurl = "https://feedjira.herokuapp.com/xml?url=#{feed}"
       %li
         %a{ href: url }= url
-      %li
-        %a{ href: xmlurl }= xmlurl
 
   - if @feeds.empty?
     %p No feeds found.
