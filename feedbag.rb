@@ -42,19 +42,22 @@ __END__
 
 - unless @url.empty?
   %h2= "Feeds for #{@url}"
-  
+
   %ul
     - @feeds.each do |feed|
       %li
         %a{ href: feed }= feed
 
   %p Explore the feeds with Feedjira:
-  
+
   %ul
     - @feeds.each do |feed|
       - url = "https://feedjira.herokuapp.com/?url=#{feed}"
+      - xmlurl = "https://feedjira.herokuapp.com/xml?url=#{feed}"
       %li
         %a{ href: url }= url
+      %li
+        %a{ href: xmlurl }= xmlurl
 
   - if @feeds.empty?
     %p No feeds found.
