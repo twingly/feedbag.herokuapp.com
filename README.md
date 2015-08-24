@@ -4,8 +4,9 @@ Returns a list of feed URLs.
 
 ## Deploy
 
-    git remote add heroku git@heroku.com:feedbag.git
-    git push heroku
+The master branch at GitHub is deployed automatically.
+
+    git push
 
 ## Example usage
 
