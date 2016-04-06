@@ -62,6 +62,12 @@ __END__
       - url = "https://feedjira.herokuapp.com/?url=#{feed}"
       %li
         %a{ href: url }= url
+  %h3 W3C Feed Validation Service
+  %ul
+    - @feeds.each do |feed|
+      - url = "https://validator.w3.org/feed/check.cgi?url=#{feed}"
+      %li
+        %a{ href: url }= url
 
   - if @feeds.empty?
     %p No feeds found.
