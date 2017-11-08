@@ -1,5 +1,6 @@
 source "https://rubygems.org"
-ruby "2.2.4"
+
+ruby File.read(".ruby-version").strip
 
 gem "feedbag"
 gem "sinatra"
