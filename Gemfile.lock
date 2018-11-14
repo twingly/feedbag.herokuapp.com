@@ -15,7 +15,7 @@ GEM
     nokogiri (1.8.5)
       mini_portile2 (~> 2.3.0)
     open_uri_redirections (0.2.1)
-    rack (2.0.5)
+    rack (2.0.6)
     rack-protection (2.0.2)
       rack
     raindrops (0.18.0)
