@@ -8,13 +8,19 @@ GEM
       temple (>= 0.8.0)
       tilt
     kgio (2.11.3)
-    mini_portile2 (2.4.0)
+    mini_portile2 (2.5.0)
     multi_json (1.15.0)
     mustermann (1.1.1)
       ruby2_keywords (~> 0.0.1)
-    nokogiri (1.10.10)
-      mini_portile2 (~> 2.4.0)
+    nokogiri (1.11.1)
+      mini_portile2 (~> 2.5.0)
+      racc (~> 1.4)
+    nokogiri (1.11.1-x86_64-darwin)
+      racc (~> 1.4)
+    nokogiri (1.11.1-x86_64-linux)
+      racc (~> 1.4)
     open_uri_redirections (0.2.1)
+    racc (1.5.2)
     rack (2.2.3)
     rack-protection (2.1.0)
       rack
@@ -39,6 +45,8 @@ GEM
 
 PLATFORMS
   ruby
+  x86_64-darwin
+  x86_64-linux
 
 DEPENDENCIES
   feedbag
@@ -51,4 +59,4 @@ RUBY VERSION
    ruby 2.7.1p83
 
 BUNDLED WITH
-   2.1.4
+   2.2.5
